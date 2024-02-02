@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "start-project": "composer update & php artisan key:generate & php artisan migrate:f & php artisan db:seed",
+        "all": "npm-run-all --parallel dev serve",
+        "serve": "php artisan serve",
+        "start": "npm run build & npm run dev",
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.6.4",
+        "laravel-vite-plugin": "^1.0.0",
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "npm-run-all": "^4.1.5",
+        "sass": "^1.70.0"
+    }
+}
