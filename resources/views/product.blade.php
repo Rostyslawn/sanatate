@@ -97,9 +97,9 @@
             </div>
             <div class="count-and-buy">
                 <div class="count">
-                    <button class="minus">-</button>
+                    <button onclick="minus()" class="minus">-</button>
                     <span class="count-span">1</span>
-                    <button class="plus">+</button>
+                    <button onclick="plus()" class="plus">+</button>
                 </div>
                 <button class="into-cart">В корзину</button>
             </div>
