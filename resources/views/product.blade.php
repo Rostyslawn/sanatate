@@ -120,7 +120,7 @@
                 </div>
                 <form class="buy"> {{-- action="{{ route("buyProduct", ["product_name" => $product->name]) }}" method="post" --}}
 {{--                    @csrf--}}
-                    <button>
+                    <button type="submit">
                         <div class="img">
                             <img src="{{asset('imgs/cursor.png')}}">
                         </div>

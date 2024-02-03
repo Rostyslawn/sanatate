@@ -214,8 +214,6 @@ button {
         width: 80%;
         padding: 0 50px;
         display: flex;
-        //justify-content: center;
-        //grid-gap: 60px;
         justify-content: space-around;
         align-items: center;
 
@@ -434,15 +432,15 @@ button {
             }
 
             .buy {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 border: 2px solid $gray;
                 border-radius: 10px;
                 width: 135px;
 
                 button {
+                    width: 100%;
+                    height: 100%;
                     display: flex;
+                    justify-content: center;
                     flex-direction: column;
                     align-items: center;
                     grid-gap: 15px;
