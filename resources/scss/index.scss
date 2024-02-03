@@ -305,6 +305,8 @@ button {
             align-items: center;
 
             .product-code {
+                display: flex;
+                grid-gap: 25px;
                 max-height: 24px;
 
                 .code {
