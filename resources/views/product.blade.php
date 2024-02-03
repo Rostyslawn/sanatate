@@ -50,7 +50,7 @@
 </div>
 <div class="nav block">
     <button class="all-categories">
-        <img src="#">
+        <img class="categories" src="{{asset('imgs/categories.png')}}">
         <span>Все категории</span>
         <div class="arrow-down"><img src="{{asset('imgs/leftarrow.png')}}"></div>
     </button>
@@ -71,19 +71,67 @@
     <div class="product">
         <div class="imgs">
             <div class="small">
-                <img src="#" alt="product image">
-                <img src="#" alt="product image">
-                <img src="#" alt="product image">
-                <img src="#" alt="product image">
+                <img class="active" src="{{asset('imgs/img.jpg')}}" alt="product image">
+                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
+                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
+                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
             </div>
             <div class="big">
-                <img src="#" alt="product image">
+                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
             </div>
         </div>
         <div class="product-info">
-            1
+            <h2>Название товара</h2>
+            <div class="product-data">
+                <div class="product-code">
+                    <span class="code">Код товара:</span>
+                    <span>111111</span>
+                </div>
+                <div class="image share"><img alt="share" src="{{asset('imgs/share.png')}}"></div>
+                <div class="image like"><img alt="like" src="{{asset('imgs/like-gray.png')}}"></div>
+                <div class="company-logo"><img alt="company logo" src="{{asset('imgs/img.jpg')}}"></div>
+            </div>
+            <div class="prices margins">
+                <span class="price">730 грн</span>
+                <span class="old-price">700 грн</span>
+            </div>
+            <div class="count-and-buy">
+                <div class="count">
+                    <button class="minus">-</button>
+                    <span class="count-span">1</span>
+                    <button class="plus">+</button>
+                </div>
+                <button class="into-cart">В корзину</button>
+            </div>
+            <hr class="margins">
+            <div class="guarantee-delivery">
+                <div class="column">
+                    <div class="guarantee">
+                        <div class="img"><img alt="guarantee" src="{{asset('imgs/guarantee.png')}}"></div>
+                        <span>Гарантия 1 год</span>
+                    </div>
+                    <div class="delivery">
+                        <div class="img"><img alt="delivery" src="{{asset('imgs/delivery.png')}}"></div>
+                        <div class="spans">
+                            <span>По Киеву 100 грн</span>
+                            <span>По Украине 1000 грн</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="buy"> {{-- action="{{ route("buyProduct", ["product_name" => $product->name]) }}" method="post" --}}
+{{--                    @csrf--}}
+                    <button>
+                        <div class="img">
+                            <img src="{{asset('imgs/cursor.png')}}">
+                        </div>
+                        <span>Купить в <br> 1 клик</span>
+                    </button>
+                </form>
+
+            </div>
         </div>
     </div>
 </div>
+<script src="{{asset('js/count.js')}}"></script>
 </body>
 </html>
