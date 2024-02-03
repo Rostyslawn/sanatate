@@ -7,17 +7,36 @@ $green: rgb(118, 138, 0);
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 
+button {
+    cursor: pointer;
+}
+
 .block {
     padding: 0 250px;
 }
 
+.arrow-down {
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .header {
-    padding: 20px 0;
+    height: 106px;
+    //padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
+    //grid-gap: 100px;
     flex-direction: row;
-    justify-content: center;
+    //justify-content: center;
     align-items: center;
-    grid-gap: 45px;
+    justify-content: space-around;
     color: white;
     background: $black_background;
 
@@ -27,6 +46,7 @@ $green: rgb(118, 138, 0);
     }
 
     .central-side, .right-side {
+        max-height: 106px;
         display: flex;
         flex-direction: column;
         grid-gap: 30px;
@@ -45,62 +65,192 @@ $green: rgb(118, 138, 0);
         .top {
             display: flex;
             justify-content: space-between;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
         }
 
-        label {
-            display: flex;
-            width: 630px;
-            height: 47px;
+        .bottom {
+            label {
+                display: flex;
+                width: 630px;
+                height: 47px;
 
-            input {
-                padding: 5px 25px;
-                width: 95%;
-                background: $black_background;
-                border-top: 2px solid $green;
-                border-left: 2px solid $green;
-                border-bottom: 2px solid $green;
-                border-top-left-radius: 30px;
-                border-bottom-left-radius: 30px;
-            }
+                input {
+                    color: white;
+                    padding: 5px 25px;
+                    width: 95%;
+                    background: $black_background;
+                    border-top: 2px solid $green;
+                    border-left: 2px solid $green;
+                    border-right: none;
+                    border-bottom: 2px solid $green;
+                    border-top-left-radius: 30px;
+                    border-bottom-left-radius: 30px;
 
-            .search {
-                width: 5%;
-                height: 100%;
+                    &:focus {
+                        outline: none;
+                    }
+                }
 
-                img {
-                    width: 100%;
+                .search {
+                    background: $black_background;
+                    padding-right: 10px;
+                    width: 5%;
                     height: 100%;
+                    border-top: 2px solid $green;
+                    border-left: none;
+                    border-right: 2px solid $green;
+                    border-bottom: 2px solid $green;
+                    border-top-right-radius: 30px;
+                    border-bottom-right-radius: 30px;
+
+                    img {
+                        object-fit: contain;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
     }
 
     .right-side {
-        .phone-icon {
-            width: 27px;
-            height: 27px;
+        .top {
+            align-items: center;
 
-            img {
-                width: 100%;
-                height: 100%;
+            .phone-icon {
+                width: 24px;
+                height: 24px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .arrow-down {
+                transform: rotate(135deg);
             }
         }
 
         .bottom {
+            grid-gap: 20px;
+
             .icon {
+                padding: 5px;
+                padding-left: 0;
+                position: relative;
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 2px solid $green;
-                border-radius: 50%;
                 width: 47px;
                 height: 47px;
 
-                img {
-                    width: 80%;
-                    height: 80%;
+                button {
+                    background: none;
+                    border: none;
                 }
+
+                img {
+                    padding: 5px;
+                    border: 2px solid $green;
+                    border-radius: 50%;
+                    width: 60%;
+                    height: 60%;
+                }
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    height: 47px;
+
+    .all-categories {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        border: none;
+        border-radius: 30px;
+        background: $green;
+        width: 297px;
+
+        span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .arrow-down {
+            transform: rotate(270deg);
+        }
+    }
+
+    .items {
+        width: 80%;
+        padding: 0 50px;
+        display: flex;
+        //justify-content: center;
+        //grid-gap: 60px;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+            width: 47px;
+            height: 47px;
+            border: 1px solid black;
+        }
+    }
+
+    .language {
+        font-weight: 800;
+        color: $green;
+        font-size: 20px;
+        min-width: 47px;
+        min-height: 47px;
+        width: 47px;
+        height: 47px;
+        background: black;
+        border: 2px solid $green;
+        border-radius: 50%;
+    }
+}
+
+.content .product {
+    padding: 0 350px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+
+    .imgs, .product-info {
+        width: 50%;
+    }
+
+    .imgs {
+        display: flex;
+        flex-direction: row;
+
+        .small {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                //width: px;
+                //height: px;
             }
         }
     }
