@@ -89,7 +89,7 @@
                 </div>
                 <div class="image share"><img alt="share" src="{{asset('imgs/share.png')}}"></div>
                 <div class="image like"><img alt="like" src="{{asset('imgs/like-gray.png')}}"></div>
-                <div class="company-logo"><img alt="company logo" src="{{asset('imgs/img.jpg')}}"></div>
+                <div class="company-logo"><img alt="company logo" src="{{asset('imgs/company-logo.png')}}"></div>
             </div>
             <div class="prices margins">
                 <span class="price">730 грн</span>
@@ -97,9 +97,9 @@
             </div>
             <div class="count-and-buy">
                 <div class="count">
-                    <button onclick="minus()" class="minus">-</button>
+                    <button onclick="minus()" class="minus"><span></span></button>
                     <span class="count-span">1</span>
-                    <button onclick="plus()" class="plus">+</button>
+                    <button onclick="plus()" class="plus"><span></span></button>
                 </div>
                 <button class="into-cart">В корзину</button>
             </div>
@@ -118,8 +118,9 @@
                         </div>
                     </div>
                 </div>
-                <form class="buy"> {{-- action="{{ route("buyProduct", ["product_name" => $product->name]) }}" method="post" --}}
-{{--                    @csrf--}}
+                <form
+                    class="buy"> {{-- action="{{ route("buyProduct", ["product_name" => $product->name]) }}" method="post" --}}
+                    {{--                    @csrf--}}
                     <button type="submit">
                         <div class="img">
                             <img src="{{asset('imgs/cursor.png')}}">
@@ -127,13 +128,85 @@
                         <span>Купить в <br> 1 клик</span>
                     </button>
                 </form>
-
             </div>
         </div>
     </div>
 </div>
-<div class="description">
-
+<div class="data block">
+    <div class="description">
+        <h3>Описание</h3>
+        @php
+            $faker = \Faker\Factory::create();
+            echo $faker->text(333);
+        @endphp
+    </div>
+    <div class="characteristics">
+        <h3>Характеристики</h3>
+        <div class="general">
+            <span>Общие характеристики</span>
+            <div class="text">
+                <div class="producer">Производитель <span>HyperX</span></div>
+                <div class="type">Тип <span>Изоляция</span></div>
+                <div class="color">Цвет <span>Черный</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="similar-products">Похожие товары</h2>
+<div class="another-products block">
+    @for($i = 0; $i < 2; $i++)
+        <div class="product">
+            <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
+            <span class="product-name">
+            @php
+                $faker = \Faker\Factory::create();
+                echo $faker->name();
+            @endphp
+        </span>
+            <div class="prices">
+                <div class="old-price">1111 грн</div>
+                <div class="price">2222 грн</div>
+            </div>
+            <div class="buttons">
+                <div class="like">
+                    <img src="{{asset('imgs/like-gray.png')}}" alt="like">
+                </div>
+                <div class="compare">
+                    <img src="{{asset('imgs/compare.png')}}" alt="compare">
+                </div>
+                <button class="buy">
+                    <span>Купить</span>
+                    <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
+                </button>
+            </div>
+        </div>
+    @endfor
+    @for($i = 0; $i < 4; $i++)
+        <div class="product">
+            <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
+            <span class="product-name">
+            @php
+                $faker = \Faker\Factory::create();
+                echo $faker->name();
+            @endphp
+        </span>
+            <div class="prices">
+                <div class="price">2222 грн</div>
+            </div>
+            <div class="buttons">
+                <div class="like">
+                    <img src="{{asset('imgs/like-gray.png')}}" alt="like">
+                </div>
+                <div class="compare">
+                    <img src="{{asset('imgs/compare.png')}}" alt="compare">
+                </div>
+                <button class="buy">
+                    <span>Купить</span>
+                    <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
+                </button>
+            </div>
+        </div>
+    @endfor
 </div>
 <script src="{{asset('js/count.js')}}"></script>
 </body>

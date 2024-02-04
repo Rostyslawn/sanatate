@@ -264,6 +264,7 @@ button {
             height: $imgs_height;
 
             img {
+                cursor: pointer;
                 border: 2px solid $gray;
                 width: 70px;
                 height: 70px;
@@ -289,7 +290,6 @@ button {
     .product-info {
         display: flex;
         flex-direction: column;
-        //grid-gap: 25px;
 
         h2 {
             margin-top: 15px;
@@ -326,12 +326,13 @@ button {
             }
 
             .company-logo {
-                width: 200px;
+                width: 168px;
                 max-width: 200px;
                 height: 80px;
                 max-height: 80px;
 
                 img {
+                    object-fit: contain;
                     width: 100%;
                     height: 100%;
                 }
@@ -361,20 +362,49 @@ button {
             align-items: center;
 
             .count {
+                $width: 15px;
+
                 display: flex;
                 align-items: center;
                 grid-gap: 25px;
 
                 button {
+                    position: relative;
                     box-shadow: 0 4px 8px rgba(255, 255, 0, 0.6);
                     font-size: 28px;
-                    text-align: center;
                     background: none;
                     border: 2px solid $green;
-                    margin: auto;
                     border-radius: 50%;
                     width: 47px;
                     height: 47px;
+
+                    span {
+                        &:before {
+                            background: black;
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: $width;
+                            height: 2px;
+                        }
+                    }
+                }
+
+                .plus span {
+                    &:after {
+                        background: black;
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 2px;
+                        height: $width;
+                    }
                 }
 
                 span {
@@ -462,6 +492,152 @@ button {
 
                     span {
                         font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.data {
+    display: flex;
+    grid-gap: 50px;
+    margin-top: 50px;
+
+    .description, .characteristics {
+        width: 50%;
+    }
+
+    .description {
+        max-width: 600px;
+    }
+
+    .characteristics {
+        $coral: #DEA06E;
+
+        .general {
+            margin-top: 5px;
+        }
+
+        span {
+            color: $coral;
+        }
+
+        .text {
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+
+            div {
+                padding: 10px;
+                border: none;
+                border-radius: 30px;
+                display: flex;
+                justify-content: space-between;
+
+                &:nth-child(2n+2) {
+                    background: #F9F9FB;
+                }
+            }
+        }
+    }
+}
+
+.similar-products {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.another-products {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, auto);
+
+    .product {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
+        padding: 15px;
+        border: 2px solid $gray;
+        width: 285px;
+        height: auto;
+
+        &:hover {
+            box-shadow: 0 18px 18px rgba(255, 255, 0, 0.7);
+            transition: 0.3s;
+        }
+
+        .img {
+            width: 100%;
+            height: 50%;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .product-name {
+            color: $gray;
+        }
+
+        .prices {
+            display: flex;
+            justify-content: space-between;
+            font-size: 22px;
+            font-weight: 700;
+
+            .old-price {
+                font-weight: 600;
+                font-size: 16px;
+                color: $gray;
+                text-decoration: line-through;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .like, .compare {
+                padding: 3px;
+                border: 2px solid $gray;
+                border-radius: 50%;
+            }
+
+            div {
+                width: 24px;
+                height: 24px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .buy {
+                font-weight: 600;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 10px;
+                border: none;
+                border-radius: 30px;
+                color: white;
+                width: 150px;
+                //height: 25px;
+                background: black;
+                padding: 10px 0;
+
+                .cart {
+                    width: 18px;
+                    height: 18px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
