@@ -34,8 +34,9 @@
         </div>
         <div class="bottom">
             <div class="icon like">
+{{--            fix    --}}
                 <button><img alt="like" src="{{asset('imgs/like.png')}}"></button>
-                <span>0</span>
+                <span>{{$product->likes}}</span>
             </div>
             <div class="icon stats">
                 <button><img alt="stats" src="{{asset('imgs/stats.png')}}"></button>
@@ -81,19 +82,23 @@
             </div>
         </div>
         <div class="product-info">
-            <h2>Название товара</h2>
+            <h2>{{$product->name}}</h2>
             <div class="product-data">
                 <div class="product-code">
                     <span class="code">Код товара:</span>
-                    <span>111111</span>
+                    <span>{{$product->code}}</span>
                 </div>
                 <div class="image share"><img alt="share" src="{{asset('imgs/share.png')}}"></div>
                 <div class="image like"><img alt="like" src="{{asset('imgs/like-gray.png')}}"></div>
                 <div class="company-logo"><img alt="company logo" src="{{asset('imgs/company-logo.png')}}"></div>
             </div>
             <div class="prices margins">
-                <span class="price">730 грн</span>
-                <span class="old-price">700 грн</span>
+                @if($product->price)
+                    <span class="price">{{$product->price}} грн</span>
+                    <span class="old-price">{{$product->old_price}} грн</span>
+                @else
+                    <span class="price">{{$product->old_price}} грн</span>
+                @endif
             </div>
             <div class="count-and-buy">
                 <div class="count">
@@ -135,19 +140,16 @@
 <div class="data block">
     <div class="description">
         <h3>Описание</h3>
-        @php
-            $faker = \Faker\Factory::create();
-            echo $faker->text(333);
-        @endphp
+        {{$product->description}}
     </div>
     <div class="characteristics">
         <h3>Характеристики</h3>
         <div class="general">
             <span>Общие характеристики</span>
             <div class="text">
-                <div class="producer">Производитель <span>HyperX</span></div>
-                <div class="type">Тип <span>Изоляция</span></div>
-                <div class="color">Цвет <span>Черный</span></div>
+                <div class="producer">Производитель <span>{{$product->producer}}</span></div>
+                <div class="type">Тип <span>{{$product->type}}</span></div>
+                <div class="color">Цвет <span>{{$product->color}}</span></div>
             </div>
         </div>
     </div>
