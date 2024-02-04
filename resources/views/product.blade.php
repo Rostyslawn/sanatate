@@ -34,7 +34,6 @@
         </div>
         <div class="bottom">
             <div class="icon like">
-{{--            fix    --}}
                 <button><img alt="like" src="{{asset('imgs/like.png')}}"></button>
                 <span>{{$product->likes}}</span>
             </div>
@@ -183,32 +182,30 @@
             </div>
         </div>
     @endfor
-    @for($i = 0; $i < 4; $i++)
-        <div class="product">
-            <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
-            <span class="product-name">
+    <div class="product">
+        <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
+        <span class="product-name">
             @php
                 $faker = \Faker\Factory::create();
                 echo $faker->name();
             @endphp
         </span>
-            <div class="prices">
-                <div class="price">2222 грн</div>
-            </div>
-            <div class="buttons">
-                <div class="like">
-                    <img src="{{asset('imgs/like-gray.png')}}" alt="like">
-                </div>
-                <div class="compare">
-                    <img src="{{asset('imgs/compare.png')}}" alt="compare">
-                </div>
-                <button class="buy">
-                    <span>Купить</span>
-                    <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
-                </button>
-            </div>
+        <div class="prices">
+            <div class="price">2222 грн</div>
         </div>
-    @endfor
+        <div class="buttons">
+            <div class="like">
+                <img src="{{asset('imgs/like-gray.png')}}" alt="like">
+            </div>
+            <div class="compare">
+                <img src="{{asset('imgs/compare.png')}}" alt="compare">
+            </div>
+            <button class="buy">
+                <span>Купить</span>
+                <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
+            </button>
+        </div>
+    </div>
 </div>
 <script src="{{asset('js/count.js')}}"></script>
 </body>

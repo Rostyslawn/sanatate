@@ -145,7 +145,7 @@ button {
             grid-gap: 20px;
 
             .icon {
-                padding: 5px;
+                padding: 10px;
                 padding-left: 0;
                 position: relative;
                 cursor: pointer;
@@ -551,7 +551,8 @@ button {
 .another-products {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
 
     .product {
         display: flex;
@@ -627,7 +628,6 @@ button {
                 border-radius: 30px;
                 color: white;
                 width: 150px;
-                //height: 25px;
                 background: black;
                 padding: 10px 0;
 
