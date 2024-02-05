@@ -551,7 +551,7 @@ button {
 .another-products {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     justify-content: space-between;
 
     .product {
@@ -629,7 +629,7 @@ button {
                 color: white;
                 width: 150px;
                 background: black;
-                padding: 10px 0;
+                padding: 8px 0;
 
                 .cart {
                     width: 18px;

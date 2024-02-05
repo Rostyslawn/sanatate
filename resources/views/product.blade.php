@@ -155,18 +155,19 @@
 </div>
 <h2 class="similar-products">Похожие товары</h2>
 <div class="another-products block">
-    @for($i = 0; $i < 2; $i++)
+    @foreach($allProducts->shuffle()->take(4) as $product)
         <div class="product">
             <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
             <span class="product-name">
-            @php
-                $faker = \Faker\Factory::create();
-                echo $faker->name();
-            @endphp
-        </span>
+                {{$product->name}}
+            </span>
             <div class="prices">
-                <div class="old-price">1111 грн</div>
-                <div class="price">2222 грн</div>
+                @if($product->price)
+                    <span class="price">{{$product->price}} грн</span>
+                    <span class="old-price">{{$product->old_price}} грн</span>
+                @else
+                    <span class="price">{{$product->old_price}} грн</span>
+                @endif
             </div>
             <div class="buttons">
                 <div class="like">
@@ -181,31 +182,7 @@
                 </button>
             </div>
         </div>
-    @endfor
-    <div class="product">
-        <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
-        <span class="product-name">
-            @php
-                $faker = \Faker\Factory::create();
-                echo $faker->name();
-            @endphp
-        </span>
-        <div class="prices">
-            <div class="price">2222 грн</div>
-        </div>
-        <div class="buttons">
-            <div class="like">
-                <img src="{{asset('imgs/like-gray.png')}}" alt="like">
-            </div>
-            <div class="compare">
-                <img src="{{asset('imgs/compare.png')}}" alt="compare">
-            </div>
-            <button class="buy">
-                <span>Купить</span>
-                <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
-            </button>
-        </div>
-    </div>
+    @endforeach
 </div>
 <script src="{{asset('js/count.js')}}"></script>
 </body>
