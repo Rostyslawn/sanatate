@@ -30,6 +30,7 @@ class ProductsFactory extends Factory
             "old_price" => $faker->numberBetween(0, 1000),
             "code" => $faker->numberBetween(0, 100000),
             "producer" => $faker->company,
+            "image" => $faker->imageUrl,
             "color" => $faker->colorName,
             "description" => $faker->text(333),
         ];

@@ -55,15 +55,14 @@
         <div class="arrow-down"><img src="{{asset('imgs/leftarrow.png')}}"></div>
     </button>
     <div class="items">
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
-        <div><img src="#" alt=""></div>
+        <div><img src="{{asset('imgs/categories/wine-bottle.png')}}" alt="Alcohol"></div>
+        <div><img src="{{asset('imgs/categories/electronics.png')}}" alt="Electronics"></div>
+        <div><img src="{{asset('imgs/categories/cosmetics.png')}}" alt="Cosmetics"></div>
+        <div><img src="{{asset('imgs/categories/geympad.png')}}" alt="Games"></div>
+        <div><img src="{{asset('imgs/categories/home.png')}}" alt="House products"></div>
+        <div><img src="{{asset('imgs/categories/paws.png')}}" alt="Products for animals"></div>
+        <div><img src="{{asset('imgs/categories/plumbing.png')}}" alt="Plumbing"></div>
+        <div><img src="{{asset('imgs/categories/school-bag.png')}}" alt="Products for school"></div>
     </div>
     <button class="language">RU</button>
 </div>
@@ -71,13 +70,12 @@
     <div class="product">
         <div class="imgs">
             <div class="small">
-                <img class="active" src="{{asset('imgs/img.jpg')}}" alt="product image">
-                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
-                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
-                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
+                @foreach($productImages as $image)
+                    <img src="{{$image->image}}" alt="{{$product->name}}">
+                @endforeach
             </div>
             <div class="big">
-                <img src="{{asset('imgs/img.jpg')}}" alt="product image">
+                <img src="{{$product->image}}" alt="{{$product->name}}">
             </div>
         </div>
         <div class="product-info">
@@ -155,9 +153,10 @@
 </div>
 <h2 class="similar-products">Похожие товары</h2>
 <div class="another-products block">
+{{-- shuffle = inRandomOrder   --}}
     @foreach($allProducts->shuffle()->take(4) as $product)
         <div class="product">
-            <div class="img"><img src="{{asset('imgs/img.jpg')}}"></div>
+            <div class="img"><img src="{{$product->image}}"></div>
             <span class="product-name">
                 {{$product->name}}
             </span>

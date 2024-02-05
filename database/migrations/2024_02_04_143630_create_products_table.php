@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer("old_price");
             $table->integer("code");
             $table->string("producer");
+            $table->string("image");
             $table->string("color");
             $table->text("description");
             $table->timestamps();
