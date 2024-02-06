@@ -25,7 +25,7 @@ class ProductsFactory extends Factory
             "name" => $faker->unique()->name,
             "type" => $faker->unique()->name,
             "category" => $faker->numberBetween(0, 10),
-            "likes" => $faker->numberBetween(0, 100),
+            "likes" => $faker->numberBetween(0, 1000),
             "price" => $randomSale,
             "old_price" => $faker->numberBetween(0, 1000),
             "code" => $faker->numberBetween(0, 100000),

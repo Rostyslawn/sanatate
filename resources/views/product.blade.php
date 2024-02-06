@@ -120,9 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <form
-                    class="buy"> {{-- action="{{ route("buyProduct", ["product_name" => $product->name]) }}" method="post" --}}
-                    {{--                    @csrf--}}
+                <form class="buy">
                     <button type="submit">
                         <div class="img">
                             <img src="{{asset('imgs/cursor.png')}}">
@@ -153,7 +151,7 @@
 </div>
 <h2 class="similar-products">Похожие товары</h2>
 <div class="another-products block">
-{{-- shuffle = inRandomOrder   --}}
+    {{-- shuffle = inRandomOrder   --}}
     @foreach($allProducts->shuffle()->take(4) as $product)
         <div class="product">
             <div class="img"><img src="{{$product->image}}"></div>
