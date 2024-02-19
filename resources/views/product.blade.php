@@ -18,6 +18,7 @@
             <div><a href="#">О нас</a></div>
             <div><a href="#">Контакты</a></div>
             <div><a href="#">Доставка и оплата</a></div>
+			<div><a href="#">Продавцы</a></div>
         </div>
         <div class="bottom">
             <label>
