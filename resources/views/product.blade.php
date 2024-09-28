@@ -154,7 +154,7 @@
 <div class="another-products block">
     {{-- shuffle = inRandomOrder   --}}
     @foreach($allProducts->shuffle()->take(4) as $product)
-        <div class="product">
+        <a href="{{ route("product", ["product_name" => $product->name]) }}" class="product">
             <div class="img"><img src="{{$product->image}}"></div>
             <span class="product-name">
                 {{$product->name}}
@@ -179,7 +179,7 @@
                     <div class="cart"><img src="{{asset('imgs/cart.png')}}"></div>
                 </button>
             </div>
-        </div>
+        </a>
     @endforeach
 </div>
 <script src="{{asset('js/count.js')}}"></script>
