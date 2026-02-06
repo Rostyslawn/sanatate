@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -18,7 +18,7 @@
             <div><a href="#">О нас</a></div>
             <div><a href="#">Контакты</a></div>
             <div><a href="#">Доставка и оплата</a></div>
-			<div><a href="#">Продавцы</a></div>
+            <div><a href="#">Продавцы</a></div>
         </div>
         <div class="bottom">
             <label>
@@ -30,7 +30,7 @@
     <div class="right-side item">
         <div class="top">
             <div class="phone-icon"><img alt="phone" src="{{asset('imgs/phone-icon.png')}}"></div>
-            <div>+38888888</div>
+            <div>+380965009080</div>
             <div class="arrow-down"><img src="{{asset('imgs/leftarrow.png')}}" class="arrow-down"></div>
         </div>
         <div class="bottom">
@@ -48,24 +48,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="nav block">
-    <button class="all-categories">
-        <img class="categories" src="{{asset('imgs/categories.png')}}">
-        <span>Все категории</span>
-        <div class="arrow-down"><img src="{{asset('imgs/leftarrow.png')}}"></div>
-    </button>
-    <div class="items">
-        <div><img src="{{asset('imgs/categories/wine-bottle.png')}}" alt="Alcohol"></div>
-        <div><img src="{{asset('imgs/categories/electronics.png')}}" alt="Electronics"></div>
-        <div><img src="{{asset('imgs/categories/cosmetics.png')}}" alt="Cosmetics"></div>
-        <div><img src="{{asset('imgs/categories/geympad.png')}}" alt="Games"></div>
-        <div><img src="{{asset('imgs/categories/home.png')}}" alt="House products"></div>
-        <div><img src="{{asset('imgs/categories/paws.png')}}" alt="Products for animals"></div>
-        <div><img src="{{asset('imgs/categories/plumbing.png')}}" alt="Plumbing"></div>
-        <div><img src="{{asset('imgs/categories/school-bag.png')}}" alt="Products for school"></div>
-    </div>
-    <button class="language">RU</button>
 </div>
 <div class="content">
     <div class="product">
@@ -152,7 +134,6 @@
 </div>
 <h2 class="similar-products">Похожие товары</h2>
 <div class="another-products block">
-    {{-- shuffle = inRandomOrder   --}}
     @foreach($allProducts->shuffle()->take(4) as $product)
         <a href="{{ route("product", ["product_name" => $product->name]) }}" class="product">
             <div class="img"><img src="{{$product->image}}"></div>
